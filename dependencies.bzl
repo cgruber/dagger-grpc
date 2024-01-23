@@ -16,6 +16,9 @@ artifacts = [
     "io.grpc:grpc-kotlin-stub:1.4.1",
     "com.google.code.findbugs:jsr305:3.0.2",
     "org.slf4j:slf4j-jdk14:2.0.11",
+    "com.google.devtools.ksp:symbol-processing-api:1.9.21-1.0.15",
+    # "com.squareup:kotlinpoet:1.13.0" #  supplied by dagger
+    "com.squareup:kotlinpoet-ksp:1.13.0",
 ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + DAGGER_ARTIFACTS
 
 override_targets = {

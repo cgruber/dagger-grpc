@@ -1,0 +1,1 @@
+build --experimental_worker_max_multiplex_instances=KotlinKsp=1

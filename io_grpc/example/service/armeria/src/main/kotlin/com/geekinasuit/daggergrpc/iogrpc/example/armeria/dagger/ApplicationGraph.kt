@@ -1,12 +1,14 @@
 package com.geekinasuit.daggergrpc.iogrpc.example.armeria.dagger
 
 import com.geekinasuit.daggergrpc.api.ApplicationScope
+import com.geekinasuit.daggergrpc.api.GrpcApplicationComponent
 import com.geekinasuit.daggergrpc.iogrpc.example.armeria.ExampleServer
 import dagger.Component
 
-@Component(modules = [ApplicationGraphModule::class, GrpcHandlersModule::class])
+@Component(modules = [ApplicationGraphModule::class, GrpcCallScopeGraph.BindingsModule::class])
 @ApplicationScope
-interface ApplicationGraph : GrpcCallScopeGraph.Supplier {
+@GrpcApplicationComponent
+interface ApplicationGraph {
   fun server(): ExampleServer
 
   @Component.Builder

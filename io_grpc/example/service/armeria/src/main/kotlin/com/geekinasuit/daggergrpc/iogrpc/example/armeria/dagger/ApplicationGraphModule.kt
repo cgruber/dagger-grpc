@@ -5,7 +5,5 @@ import dagger.Provides
 
 @Module
 object ApplicationGraphModule {
-  @Provides fun callGraphSupplier(impl: ApplicationGraph): GrpcCallScopeGraph.Supplier = impl
+  // Insert application-scoped (@Singleton) bindings here.
 }
-
-data class Blah(val blah: String)
