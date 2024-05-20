@@ -6,14 +6,17 @@ load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
 kt_jvm_library(
     name = "lib",
     srcs = glob(["src/main/kotlin/**/*.kt"]),
-    plugins = ["//io_grpc/compiler:plugin"],
+    plugins = [
+        "//io_grpc/compiler:plugin",
+        "//third_party/dagger:dagger_ksp_plugin",
+    ],
     runtime_deps = [
         "@maven//:org_slf4j_slf4j_jdk14",
     ],
     deps = [
         "//api",
         "//io_grpc/example/proto:grpc",
-        "//third_party/dagger",
+        "//third_party/dagger:dagger_noplugin",
         "//util/armeria",
         "@com_google_protobuf//java/core",
         "@maven//:com_google_guava_guava",

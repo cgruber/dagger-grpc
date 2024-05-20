@@ -1,3 +1,23 @@
 load("@dagger//:workspace_defs.bzl", "dagger_rules")
+load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_ksp_plugin")
+
+package(default_visibility = ["//visibility:public"])
+
+java_library(
+    name = "dagger_noplugin",
+    exports = [
+        "@maven//:com_google_dagger_dagger",
+        "@maven//:javax_inject_javax_inject",
+    ],
+)
+
+kt_ksp_plugin(
+    name = "dagger_ksp_plugin",
+    processor_class = "dagger.internal.codegen.KspComponentProcessor",
+    deps = [
+        "@maven//:com_google_dagger_dagger_compiler",
+        "@maven//:com_google_guava_guava",
+    ],
+)
 
 dagger_rules()

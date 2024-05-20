@@ -1,5 +1,7 @@
 KOTLIN_LANGUAGE_LEVEL = "1.9"
 JAVA_LANGUAGE_LEVEL = "1.8"
+KOTLIN_VERSION = "1.9"
+KOTLIN_RELEASE = "1.9"
 
 def rules_metadata(name, version, sha, github_project = "", url_template = ""):
     #print("name: %s" % name)

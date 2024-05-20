@@ -5,7 +5,7 @@ import com.geekinasuit.daggergrpc.api.GrpcApplicationComponent
 import com.geekinasuit.daggergrpc.iogrpc.example.armeria.ExampleServer
 import dagger.Component
 
-@Component(modules = [ApplicationGraphModule::class, GrpcCallScopeGraph.BindingsModule::class])
+@Component(modules = [ApplicationGraphModule::class, GrpcCallScopeGraph.GrpcBindingsModule::class])
 @ApplicationScope
 @GrpcApplicationComponent
 interface ApplicationGraph {
